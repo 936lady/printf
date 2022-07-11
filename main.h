@@ -9,6 +9,12 @@
 int _printf(const char *format, ...);
 int (*check_spefifier(char*))(va_list);
 
+/**
+ * struct func - struct conversion to function
+ * @t: flag string
+ * @f: pointer to func
+ */
+
 typedef struct func
 { 
 	char *t;
