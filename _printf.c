@@ -28,7 +28,8 @@ int (*check_spefifier(char*))(va_list)
 		{"r", print_str_reverse},
 		{"p", print_ptr},
 		{"R", print_rot13},
-		{"%", print_percent}
+		{"%", print_percent},
+		{NULL, NULL} /**/
 	};
 	while (i < 14)
 	{
@@ -63,7 +64,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] != '\0')
-				func = get_op(format[i + 1]);
+				func = check_spefifier(format[i + 1]);/**/
 			if (func == NULL)
 			{
 				_putchar(format[i]);
