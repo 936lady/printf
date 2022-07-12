@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - main string receiver
+ * _printf - main string receiver.
  * 
  * @format:desired characters
  * Return:printed characters count
