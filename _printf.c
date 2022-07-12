@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _printf - main string receiver.
- * 
- * @format:desired characters
- * Return:printed characters count
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
  */
 int _printf(const char *format, ...)
 {
@@ -23,15 +23,15 @@ int _printf(const char *format, ...)
 		{"x", print_hex},
 		{"X", print_heX},
 		{NULL, NULL}
-	};
+	};/*these are for various tasks*/
 	va_list arg_list;
 
-	if (format == NULL)
+	if (format == NULL) /*no null pointer*/
 		return (-1);
 
-	va_start(arg_list, format);
-	/*Calling parser function*/
-	printed_chars = parser(format, f_list, arg_list);
+	va_start(arg_list, format); /*initializing taking the first argument*/
+	
+	printed_chars = checker_spec(format, f_list, arg_list);
 	va_end(arg_list);
 	return (printed_chars);
 }

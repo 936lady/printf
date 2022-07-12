@@ -8,16 +8,23 @@
  * @arg_list: A list containing all the argumentents passed to the program.
  * Return: A total count of the characters printed.
  */
-int parser(const char *format, conver_t f_list[], va_list arg_list)
+int checker_spec(const char *format, conver_t f_list[], va_list arg_list)
 {
 	int i, j, r_val, printed_chars;
 
 	printed_chars = 0;
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
-		if (format[i] == '%') /*Checks for format specifiers*/
+		if (format[i] == '%')      
+			/*
+			 * next character is checked to see what it is.
+			 *  then we check how it's handles ex: format[i] + 1
+			 *   declare the function capturing the next index
+			 *   and return a function  taking in the variadic
+			 *    para specified and then prnt it.
+			*/
 		{
-			/*Iterates through struct to find the right func*/
+			/*Iterates struct to find the right func*/
 			for (j = 0; f_list[j].sym != NULL; j++)
 			{
 				if (format[i + 1] == f_list[j].sym[0])
