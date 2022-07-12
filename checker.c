@@ -24,4 +24,5 @@ int (*check_specifier(char*))(va_list)//va_list argument
 
 			}
 		return(NULL);
-} 
+}
+
