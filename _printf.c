@@ -19,6 +19,8 @@ int (*check_spefifier(char *))(va_list)
 		{"s", print_str},
 		{"i", print_nbr},
 		{"d", print_nbr},
+		{"%", print_percent},
+		{NULL, NULL},
 		{"b", print_binary},
 		{"o", print_octal},
 		{"x", print_hexa_lower},
@@ -28,8 +30,11 @@ int (*check_spefifier(char *))(va_list)
 		{"r", print_str_reverse},
 		{"p", print_ptr},
 		{"R", print_rot13},
-		{"%", print_percent},
-		{NULL, NULL} /**/
+/*
+*	{"%", print_percent},
+*		{NULL, NULL}
+*/
+        
 	};
 	while (i < 14)
 	{
@@ -64,7 +69,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] != '\0')
-				func = check_spefifier(format[i + 1]);/**/
+				func = get_op(format[i + 1]);/**/
 			if (func == NULL)
 			{
 				_putchar(format[i]);

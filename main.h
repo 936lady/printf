@@ -17,7 +17,7 @@ int _putchar(char c);
 
 typedef struct func
 { 
-	char *t;
+	char *c;
 	int (*f)(va_list);
 } func_t;
 
