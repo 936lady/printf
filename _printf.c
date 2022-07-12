@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(arg_list, format); /*initializing taking the first argument*/
-	
+
 	printed_chars = checker_spec(format, f_list, arg_list);
 	va_end(arg_list);
 	return (printed_chars);

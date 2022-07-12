@@ -15,7 +15,7 @@ int checker_spec(const char *format, conver_t f_list[], va_list arg_list)
 	printed_chars = 0;
 	for (i = 0; format[i] != '\0'; i++)/* Iterates through the main str*/
 	{
-		if (format[i] == '%')      
+		if (format[i] == '%')
 			/*
 			 * next character is checked to see what it is.
 			 *  then we check how it's handles ex: format[i] + 1
