@@ -10,7 +10,7 @@
  * Return: pointer to function
  */
 
-int (*check_spefifier(char*))(va_list)
+int (*check_spefifier(char *))(va_list)
 {
 	int i = 0;
 
