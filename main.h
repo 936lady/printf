@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...);
 int (*check_spefifier(char*))(va_list);
-
+int _putchar(char c); 
 /**
  * struct func - struct conversion to function
  * @t: flag string
